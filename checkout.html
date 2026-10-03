@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — VELORA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="checkout">
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">VEL<em>O</em>RA</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="cart.html" class="icon-btn" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span class="cart-count">0</span></a>
+      <button class="menu-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</div>
+    <h1>Checkout</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div id="orderSuccess" style="display:none;" class="empty-state">
+      <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 20px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <h3>Order placed successfully</h3>
+      <p>Your order <strong id="orderNumber" style="color:var(--accent);"></strong> has been confirmed. A confirmation email is on its way — thanks for shopping with VELORA.</p>
+      <a href="index.html" class="btn btn-primary">Back to home</a>
+      <a href="shop.html" class="btn btn-outline">Continue shopping</a>
+    </div>
+
+    <div id="checkoutFormsWrap" class="checkout-layout">
+      <form id="checkoutForm">
+        <div class="form-card">
+          <h3><span class="step-num">1</span> Contact information</h3>
+          <div class="form-grid">
+            <div class="field"><label>Full name</label><input type="text" required></div>
+            <div class="field"><label>Phone number</label><input type="tel" required></div>
+            <div class="field full" style="grid-column:1/-1;"><label>Email address</label><input type="email" required></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3><span class="step-num">2</span> Shipping address</h3>
+          <div class="form-grid">
+            <div class="field" style="grid-column:1/-1;"><label>Street address</label><input type="text" required></div>
+            <div class="field"><label>City</label><input type="text" required></div>
+            <div class="field"><label>Postal code</label><input type="text" required></div>
+            <div class="field" style="grid-column:1/-1;"><label>Province</label>
+              <select required>
+                <option value="">Select province</option>
+                <option>Punjab</option><option>Sindh</option><option>Khyber Pakhtunkhwa</option>
+                <option>Balochistan</option><option>Islamabad Capital Territory</option><option>Gilgit-Baltistan</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3><span class="step-num">3</span> Payment method</h3>
+          <div class="pay-options">
+            <label class="pay-option selected">
+              <input type="radio" name="pay" value="cod" checked>
+              <div><strong>Cash on delivery</strong><div style="font-size:.8rem;color:var(--muted);">Pay when your order arrives</div></div>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="pay" value="card">
+              <div><strong>Credit / Debit card</strong><div style="font-size:.8rem;color:var(--muted);">Visa, Mastercard accepted</div></div>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Place order</button>
+      </form>
+
+      <div class="summary-card">
+        <h3 style="margin-bottom:18px;">Order review</h3>
+        <div id="checkoutItems"></div>
+        <div class="summary-row" style="border-top:1px solid var(--border);margin-top:10px;padding-top:14px;"><span>Subtotal</span><span id="coSubtotal">PKR 0</span></div>
+        <div class="summary-row"><span>Shipping</span><span id="coShipping">Free</span></div>
+        <div class="summary-row total"><span>Total</span><span id="coTotal">PKR 0</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:24px;">
+      <span>© 2026 VELORA. All rights reserved.</span>
+      <div class="pay-icons"><span>VISA</span><span>Mastercard</span><span>COD</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="page.js"></script>
+</body>
+</html>

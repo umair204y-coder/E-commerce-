@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product — VELORA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="product">
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">VEL<em>O</em>RA</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" placeholder="Search products...">
+    </div>
+    <div class="nav-actions">
+      <a href="cart.html" class="icon-btn" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span class="cart-count">0</span></a>
+      <button class="menu-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="pdCat">Product</span></div>
+  </div>
+</div>
+
+<section class="section" style="padding-top:48px;">
+  <div class="container">
+    <div class="pd-wrap">
+      <div>
+        <div class="pd-gallery-main" id="pdMainMedia"></div>
+        <div class="pd-thumbs">
+          <div class="thumb active"></div>
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+        </div>
+      </div>
+      <div>
+        <span class="pd-cat" id="pdCatLabel"></span>
+        <h1 class="pd-title" id="pdTitle">Product name</h1>
+        <div id="pdRating"></div>
+        <div class="pd-price" id="pdPrice"></div>
+        <div class="stock-line">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          In stock — ready to ship today
+        </div>
+        <p id="pdDesc">Product description loading...</p>
+
+        <div class="qty-row">
+          <div class="qty-control">
+            <button id="qtyMinus">−</button>
+            <span id="qtyVal">1</span>
+            <button id="qtyPlus">+</button>
+          </div>
+          <button class="icon-btn" id="pdWishBtn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+          </button>
+        </div>
+        <div class="pd-actions">
+          <button class="btn btn-outline" id="addToCartBtn">Add to cart</button>
+          <button class="btn btn-primary" id="buyNowBtn">Buy it now</button>
+        </div>
+
+        <div class="pd-meta">
+          <span>🚚 Free delivery on orders over PKR 15,000</span>
+          <span>↩ 7-day hassle-free returns</span>
+          <span>🔒 Secure checkout, cash on delivery available</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab-heads">
+        <div class="tab-head active" data-tab="tabDesc">Description</div>
+        <div class="tab-head" data-tab="tabSpecs">Specifications</div>
+        <div class="tab-head" data-tab="tabReviews">Reviews (128)</div>
+      </div>
+      <div class="tab-panel active" id="tabDesc">
+        <p id="tabDescText">Full product description will appear here, covering materials, build quality, and what makes it worth adding to your everyday carry.</p>
+      </div>
+      <div class="tab-panel" id="tabSpecs">
+        <table class="spec-table">
+          <tr><td>Category</td><td id="specCat"></td></tr>
+          <tr><td>SKU</td><td id="specSku"></td></tr>
+          <tr><td>Warranty</td><td>1-year limited warranty</td></tr>
+          <tr><td>Origin</td><td>Imported, quality checked locally</td></tr>
+          <tr><td>Box contents</td><td>Product, cable/accessory kit, quick-start guide</td></tr>
+        </table>
+      </div>
+      <div class="tab-panel" id="tabReviews">
+        <div class="test-grid" style="grid-template-columns:1fr;">
+          <div class="test-card">
+            <div class="test-stars"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+            <p>"Exactly as described, arrived well packaged, and customer support answered my sizing question within the hour."</p>
+            <div class="test-person"><div class="avatar">MZ</div><div><strong>Mehreen Z.</strong><span>Verified buyer</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related">
+      <div class="section-head">
+        <h2>You may also like</h2>
+      </div>
+      <div class="product-grid" id="relatedGrid"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">VEL<em>O</em>RA</a>
+        <p>A modern tech & lifestyle store built around gear you'll actually use every day.</p>
+        <div class="social-row"><a href="#">IG</a><a href="#">FB</a><a href="#">TW</a></div>
+      </div>
+      <div><h5>Shop</h5><ul><li><a href="shop.html">All products</a></li><li><a href="cart.html">Your cart</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQs</a></li></ul></div>
+      <div><h5>Policies</h5><ul><li><a href="terms.html">Terms & Conditions</a></li><li><a href="return-policy.html">Return & Refund Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VELORA. All rights reserved.</span>
+      <div class="pay-icons"><span>VISA</span><span>Mastercard</span><span>COD</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="page.js"></script>
+<script>
+  document.getElementById("pdCatLabel");
+  // sync breadcrumb category label id usage
+</script>
+</body>
+</html>
